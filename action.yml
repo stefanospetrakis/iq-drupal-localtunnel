@@ -10,9 +10,12 @@ inputs:
     description: 'Docker/internal port that serves web content'
     required: true
     default: '80'
+outputs:
+  lt-url:
+    description: 'The URL provided by localtunnel'
 runs:
   using: 'docker'
-  image: 'docker://efrecon/localtunnel'
+  image: 'Dockerfile'
   args:
-    p: ${{ inputs.webserver-port }}
-    l: ${{ inputs.webserver-host }}
+    - ${{ inputs.webserver-port }}
+    - ${{ inputs.webserver-host }}
