@@ -12,7 +12,7 @@ inputs:
     default: '80'
 runs:
   using: 'docker'
-  image: 'efrecon/localtunnel'
+  image: 'docker://efrecon/localtunnel'
   args:
     - "--local-host ${{ inputs.webserver-host }}"
     - "--port ${{ inputs.webserver-port }}"
