@@ -2,14 +2,14 @@
 name: 'Localtunnel forwarding'
 description: 'Provides a localtunnel exposed HTTP endpoint'
 inputs:
-  webserver-host:
-    description: 'Docker/internal IP or Host name that serves web content'
-    required: true
-    default: 'drupal_container'
   webserver-port:
     description: 'Docker/internal port that serves web content'
     required: true
     default: '80'
+  webserver-host:
+    description: 'Docker/internal IP or Host name that serves web content'
+    required: true
+    default: '172.17.0.1'
 outputs:
   lt-url:
     description: 'The URL provided by localtunnel'
